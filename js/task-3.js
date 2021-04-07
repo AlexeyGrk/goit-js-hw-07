@@ -20,3 +20,5 @@ const findPicture = images
   .map(({ url, alt }) => `<img height="120" src="${url}" alt="${alt}"></li>`)
   .join(" ");
 galleryRef.insertAdjacentHTML("beforebegin", findPicture);
+
+const ffe = images.map((elem) => console.log(elem));
