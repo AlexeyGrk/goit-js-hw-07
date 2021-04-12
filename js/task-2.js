@@ -13,4 +13,3 @@ ingredients.forEach((elem) => {
   liElem.textContent = elem;
   ulRef.append(liElem);
 });
-console.log(ulRef);
