@@ -1,9 +1,12 @@
-const inputRef = document.querySelector("#name-input");
-const nameLabelref = document.querySelector("#name-output");
-
-inputRef.addEventListener("input", (event) => {
-  if (nameLabelref.textContent === "") {
-    nameLabelref.textContent = "незнакомец";
+const inputForm = {
+  inputText: document.querySelector("input#name-input"),
+  displayText: document.querySelector("span#name-output"),
+};
+const displayText = function () {
+  if (inputForm.inputText.value === "") {
+    inputForm.displayText.textContent = "незнакомец";
+  } else {
+    inputForm.displayText.textContent = inputForm.inputText.value;
   }
-  nameLabelref.textContent = event.target.value;
-});
+};
+inputForm.inputText.addEventListener("input", () => displayText());

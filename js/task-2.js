@@ -1,4 +1,3 @@
-const ulRef = document.querySelector("ul");
 const ingredients = [
   "Картошка",
   "Грибы",
@@ -8,8 +7,14 @@ const ingredients = [
   "Приправы",
 ];
 
-ingredients.forEach((elem) => {
-  const liElem = document.createElement("li");
-  liElem.textContent = elem;
-  ulRef.append(liElem);
+let ingrList = ingredients.map((value) => {
+  let item = document.createElement("li");
+  item.textContent = value;
+  return item;
 });
+const getNodeListToString = function (nodesList) {
+  return nodesList.map((element) => element.outerHTML).join("");
+};
+document
+  .querySelector("#ingredients")
+  .insertAdjacentHTML("afterbegin", getNodeListToString(ingrList));
